@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-console.log('Bot started...');
+console.log('Script started...');
 
 var date = new Date();
 var today = date.toISOString().slice(0, 10);
@@ -25,17 +25,16 @@ axios
       var ath = elem.ath_date.slice(0, 10);
       if (ath === today) todayATHs.push(elem.id);
       if (ath === yesterday) ydayATHs.push(elem.id);
-      return todayATHs;
     });
 
     console.log(`
-Today ${today} ATHs:
+Today's ${today} ATHs:
 ------------------------------
 `);
     todayATHs.map((ath) => console.log(ath));
     console.log(`
 
-Yesterday ${yesterday} ATHs:
+Yesterday's ${yesterday} ATHs:
 ------------------------------
 `);
     ydayATHs.map((ath) => console.log(ath));
